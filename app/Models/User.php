@@ -47,13 +47,19 @@ class User extends Authenticatable
             "kind" => "text",
             "required" => true,
             "readOnly" => false,
-            "name" => "User name"
+            "name" => "Name"
         ],
         "email" => [
             "kind" => "email",
             "required" => true,
             "readOnly" => false,
-            "name" => "User email"
+            "name" => "Email"
+        ],
+        "password" => [
+            "kind" => "password",
+            "required" => true,
+            "readOnly" => false,
+            "name" => "Password"
         ]
     ];
 
