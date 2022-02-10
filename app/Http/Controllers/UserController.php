@@ -17,6 +17,9 @@ class UserController extends BaseController {
 
     public function create(Request $request)
     {
-        User::create($request->toArray());
+        $data = $request->toArray();
+        $data["password"] = bcrypt($data["password"]);
+
+        return User::create($data);
     }
 }
