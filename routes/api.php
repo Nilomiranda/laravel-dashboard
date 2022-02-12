@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/user/description', [UserController::class, 'getEntityDescription']);
 Route::post('/user/create', [UserController::class, 'create']);
+
+Route::middleware(['api'])->group(function( ) {
+    Route::post('/session', [SessionController::class, 'create']);
+});
